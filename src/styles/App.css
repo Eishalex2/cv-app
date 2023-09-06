@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  gap: 60px;
+  padding: 30px;
+  justify-content: center;
+}
+
+.input-sections,
+.display {
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.input-sections {
+  width: 30vw;
+  background-color: pink;
+}
+
+.display {
+  width: 45vw;
+  background-color: lightblue;
+}
