@@ -27,7 +27,7 @@ function TextArea({id, labelName, value, name, onChange}) {
         value={value}
         onChange={onChange} 
         cols="30" 
-        rows="10">
+        rows="6">
       </textarea>
     </div>
   )

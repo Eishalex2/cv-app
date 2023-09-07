@@ -22,22 +22,24 @@ export default function WorkInput({company, position, start, end, location, desc
           onChange={onChange}
           name="position"
         />
-        <Input
-          id="start-date"
-          labelName = "Start Date"
-          type="text"
-          value={start}
-          onChange={onChange}
-          name="start"
-        />
-        <Input
-          id="end-date"
-          labelName = "End Date"
-          type="text"
-          value={end}
-          onChange={onChange}
-          name="end"
-        />
+        <div className="dates">
+          <Input
+            id="start-date"
+            labelName = "Start Date"
+            type="text"
+            value={start}
+            onChange={onChange}
+            name="start"
+          />
+          <Input
+            id="end-date"
+            labelName = "End Date"
+            type="text"
+            value={end}
+            onChange={onChange}
+            name="end"
+          />
+        </div>
         <Input
           id="location"
           labelName = "Location"

@@ -1,6 +1,7 @@
 import GeneralInfoInput from "./components/generalInfo";
 import WorkInput from "./components/work";
 import Education from "./components/education";
+import GeneralDisplay from "./components/generalDisplay";
 import exampleData from "./example";
 import { useState } from 'react';
 import './styles/App.css';
@@ -57,7 +58,9 @@ export default function App() {
       </section>
 
       <section className="display">
-
+        <GeneralDisplay
+          fullName = {general.fullName}
+        />
       </section>
     </div>
   )

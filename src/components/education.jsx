@@ -22,22 +22,24 @@ export default function Education({school, degree, start, end, location, onChang
           onChange={onChange}
           name="degree"
         />
-        <Input
-          id="start-date"
-          labelName = "Start Date"
-          type="text"
-          value={start}
-          onChange={onChange}
-          name="start"
-        />
-        <Input
-          id="end-date"
-          labelName = "End Date"
-          type="text"
-          value={end}
-          onChange={onChange}
-          name="end"
-        />
+        <div className="dates">
+          <Input
+            id="start-date"
+            labelName = "Start Date"
+            type="text"
+            value={start}
+            onChange={onChange}
+            name="start"
+          />
+          <Input
+            id="end-date"
+            labelName = "End Date"
+            type="text"
+            value={end}
+            onChange={onChange}
+            name="end"
+          />
+        </div>
         <Input
           id="location"
           labelName = "Location"
