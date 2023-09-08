@@ -1,14 +1,19 @@
 :root {
   --main-bg-color: #f3f3f4;
+  --accent-color: #49AF78;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 
 #root {
   background-color: var(--main-bg-color);
+}
+
+li {
+  list-style-type: none;
 }

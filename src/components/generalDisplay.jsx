@@ -1,14 +1,22 @@
 import { PropTypes } from 'prop-types';
 
-export default function GeneralDisplay({fullName}) {
+export default function GeneralDisplay({ fullName, email, phone, address }) {
 
   return (
-    <div className="general-display">
+    <>
       <h1>{fullName}</h1>
-    </div>
+      <ul>
+        <li>{email}</li>
+        <li className="phone">{phone}</li>
+        <li className="address">{address}</li>
+      </ul>
+    </>
   )
 }
 
 GeneralDisplay.propTypes = {
-  fullName: PropTypes.string
+  fullName: PropTypes.string,
+  email: PropTypes.string,
+  phone: PropTypes.string,
+  address: PropTypes.string
 }

@@ -27,7 +27,7 @@ label {
 }
 
 input {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-size: .9rem;
   line-height: 2.5rem;
   border: none;
@@ -85,6 +85,117 @@ form h1 {
   height: calc(100vh - 60px);
   flex-shrink: 0;
   background-color: white;
-  padding: 15px;
+  /* padding: 15px; */
   box-shadow: 0 0 5px #c4c4c5;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+header {
+  height: 20%;
+  padding: 15px;
+  background-color: var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15%;
+  color: white;
+}
+
+header h1 {
+  font-size: 2.2rem;
+}
+
+header ul li {
+  font-size: 1.1rem;
+}
+
+header .phone,
+header .address {
+  flex-shrink: 0;
+}
+
+header ul {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  gap: max(20px, 10%);
+}
+
+.work-display h2,
+.edu-display h2 {
+  background-color: var(--accent-color);
+  text-align: center;
+  padding: 5px 0;
+  width: 80%;
+  margin: 0 auto 20px auto;
+  color: white;
+}
+
+.work-block,
+.education-block {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.work-block ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 3px;
+  grid-template-areas: 
+    "company dates"
+    "position location";
+  margin: 10px 0;
+}
+
+.work-block .company {
+  grid-area: company;
+  font-weight: bold;
+}
+
+.work-block .position {
+  grid-area: position;
+  font-style: italic;
+}
+
+.work-block .dates,
+.education-block .dates {
+  grid-area: dates;
+  display: block;
+  justify-self: end;
+}
+
+.work-block .location,
+.education-block .location {
+  grid-area: location;
+  font-style: italic;
+  justify-self: end;
+}
+
+.work-block .description {
+  margin: 0 10px;
+}
+
+.education-block ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 3px;
+  grid-template-areas: 
+    "school dates"
+    "degree location";
+  margin: 10px 0;
+}
+
+.education-block .school {
+  grid-area: school;
+  font-weight: bold;
+}
+
+.education-block .degree {
+  grid-area: degree;
+  font-style: italic;
 }
