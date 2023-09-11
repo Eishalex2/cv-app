@@ -4,6 +4,7 @@ import Education from "./components/education";
 import GeneralDisplay from "./components/generalDisplay";
 import WorkDisplay from "./components/workDisplay";
 import EducationDisplay from "./components/educationDisplay";
+import Compressed from "./components/compressedView";
 import exampleData from "./example";
 import { useState } from 'react';
 import './styles/App.css';
@@ -14,6 +15,7 @@ export default function App() {
   const [general, setGeneral] = useState(exampleData.generalInfo);
   const [work, setWork] = useState(exampleData.workInfo);
   const [education, setEducation] = useState(exampleData.educationInfo);
+  const [inputView, setInputView] = useState('form');
 
   const handleGeneralChange = (e) => {
     setGeneral({...general, [e.target.name]: e.target.value});
@@ -27,6 +29,10 @@ export default function App() {
     setEducation({...education, [e.target.name]: e.target.value})
   }
 
+  const handleEdit = () => {
+    setInputView(inputView === 'form' ? 'compressed' : 'form');
+  }
+
   return (
     <div className="wrapper">
       <section className="input-sections">
@@ -38,24 +44,47 @@ export default function App() {
           onChange = {handleGeneralChange}
         />
 
-        <WorkInput
-          company = {work.company}
-          position = {work.position}
-          start = {work.start}
-          end = {work.end}
-          location = {work.location}
-          description = {work.description}
-          onChange = {handleWorkChange}
-        />
+        {inputView === 'form' && (
+          <WorkInput
+            company = {work.company}
+            position = {work.position}
+            start = {work.start}
+            end = {work.end}
+            location = {work.location}
+            description = {work.description}
+            onChange = {handleWorkChange}
+            onClick = {handleEdit}
+          />
+        )}
 
-        <Education
-          school = {education.school}
-          degree = {education.degree}
-          start = {education.start}
-          end = {education.end}
-          location = {education.location}
-          onChange = {handleEducationChange}
-        />
+        {inputView === 'compressed' && (
+          <Compressed
+            text = {work.company}
+            handleEdit = {handleEdit}
+            heading = "Work Experience"
+          />
+        )}
+
+        {inputView === 'form' && (
+          <Education
+            school = {education.school}
+            degree = {education.degree}
+            start = {education.start}
+            end = {education.end}
+            location = {education.location}
+            onChange = {handleEducationChange}
+            onClick = {handleEdit}
+          />
+        )}
+
+        {inputView === 'compressed' && (
+          <Compressed
+            text = {education.school}
+            handleEdit = {handleEdit}
+            heading = "Education"
+          />
+        )}
+
 
       </section>
 

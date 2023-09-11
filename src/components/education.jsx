@@ -1,7 +1,8 @@
 import { Input } from './inputs';
 import { PropTypes } from 'prop-types';
+import Button from './buttons';
 
-export default function Education({school, degree, start, end, location, onChange}) {
+export default function Education({school, degree, start, end, location, onChange, onClick}) {
 
   return (
     <form className="education">
@@ -48,6 +49,11 @@ export default function Education({school, degree, start, end, location, onChang
           onChange={onChange}
           name="location"
         />
+        <Button
+          onClick={onClick}
+          text="Save"
+          classLabel="save"
+        />
     </form>
   )
 }
@@ -58,5 +64,6 @@ Education.propTypes = {
   start: PropTypes.string,
   end: PropTypes.string,
   location: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  onClick: PropTypes.func
 }

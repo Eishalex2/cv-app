@@ -63,6 +63,10 @@ form h1 {
   margin-bottom: 10px;
 }
 
+.compressed {
+  background-color: pink;
+}
+
 .general,
 .work,
 .education {
