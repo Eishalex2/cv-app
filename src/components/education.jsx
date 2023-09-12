@@ -5,8 +5,7 @@ import Button from './buttons';
 export default function Education({school, degree, start, end, location, onChange, onClick}) {
 
   return (
-    <form className="education">
-      <h1>Education</h1>
+    <form>
         <Input
           id="school"
           labelName = "School"

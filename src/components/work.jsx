@@ -5,8 +5,7 @@ import Button from './buttons';
 export default function WorkInput({company, position, start, end, location, description, onChange, onClick}) {
   
   return (
-    <form className="work">
-      <h1>Work Experience</h1>
+    <form>
       <Input
         id="company"
         labelName = "Company name"

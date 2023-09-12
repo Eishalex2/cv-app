@@ -15,7 +15,8 @@ export default function App() {
   const [general, setGeneral] = useState(exampleData.generalInfo);
   const [work, setWork] = useState(exampleData.workInfo);
   const [education, setEducation] = useState(exampleData.educationInfo);
-  const [inputView, setInputView] = useState('form');
+  const [workView, setWorkView] = useState('form');
+  const [eduView, setEduView] = useState('form');
 
   const handleGeneralChange = (e) => {
     setGeneral({...general, [e.target.name]: e.target.value});
@@ -29,8 +30,12 @@ export default function App() {
     setEducation({...education, [e.target.name]: e.target.value})
   }
 
-  const handleEdit = () => {
-    setInputView(inputView === 'form' ? 'compressed' : 'form');
+  const handleWorkEdit = () => {
+    setWorkView(workView === 'form' ? 'compressed' : 'form');
+  }
+
+  const handleEduEdit = () => {
+    setEduView(eduView === 'form' ? 'compressed' : 'form');
   }
 
   return (
@@ -44,46 +49,52 @@ export default function App() {
           onChange = {handleGeneralChange}
         />
 
-        {inputView === 'form' && (
-          <WorkInput
-            company = {work.company}
-            position = {work.position}
-            start = {work.start}
-            end = {work.end}
-            location = {work.location}
-            description = {work.description}
-            onChange = {handleWorkChange}
-            onClick = {handleEdit}
-          />
-        )}
+        <div className="work">
+          <h1>Work Experience</h1>
+          {workView === 'form' && (
+            <WorkInput
+              company = {work.company}
+              position = {work.position}
+              start = {work.start}
+              end = {work.end}
+              location = {work.location}
+              description = {work.description}
+              onChange = {handleWorkChange}
+              onClick = {handleWorkEdit}
+            />
+          )}
 
-        {inputView === 'compressed' && (
-          <Compressed
-            text = {work.company}
-            handleEdit = {handleEdit}
-            heading = "Work Experience"
-          />
-        )}
+          {workView === 'compressed' && (
+            <Compressed
+              text = {work.company}
+              handleEdit = {handleWorkEdit}
+            />
+          )}
+        </div>
 
-        {inputView === 'form' && (
-          <Education
-            school = {education.school}
-            degree = {education.degree}
-            start = {education.start}
-            end = {education.end}
-            location = {education.location}
-            onChange = {handleEducationChange}
-            onClick = {handleEdit}
-          />
-        )}
+        <div className="education">
+          <h1>Education</h1>
+          {eduView === 'form' && (
+            <Education
+              school = {education.school}
+              degree = {education.degree}
+              start = {education.start}
+              end = {education.end}
+              location = {education.location}
+              onChange = {handleEducationChange}
+              onClick = {handleEduEdit}
+            />
+          )}
 
-        {inputView === 'compressed' && (
-          <Compressed
-            text = {education.school}
-            handleEdit = {handleEdit}
-            heading = "Education"
-          />
-        )}
+          {eduView === 'compressed' && (
+            <Compressed
+              text = {education.school}
+              handleEdit = {handleEduEdit}
+              heading = "Education"
+            />
+          )}
+        </div>
+
 
 
       </section>

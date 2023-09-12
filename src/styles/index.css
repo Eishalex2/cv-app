@@ -12,6 +12,7 @@
 
 #root {
   background-color: var(--main-bg-color);
+  overflow: scroll;
 }
 
 li {

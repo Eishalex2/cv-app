@@ -9,6 +9,12 @@
 
 /* Input */
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .input {
   display: flex;
   flex-direction: column;
@@ -27,7 +33,6 @@ label {
 }
 
 input {
-  margin-bottom: 10px;
   font-size: .9rem;
   line-height: 2.5rem;
   border: none;
@@ -58,13 +63,28 @@ textarea:focus {
   box-shadow: 0 0 4px #8B20EF;
 }
 
-form h1 {
+.education h1,
+.work h1 {
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
 .compressed {
-  background-color: pink;
+  background-color: var(--main-bg-color);
+  border-radius: 8px;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.compressed h2 {
+  font-size: 1.3rem;
+}
+
+.compressed ul {
+  display: flex;
+  gap: 15px;
 }
 
 .general,
@@ -80,6 +100,24 @@ form h1 {
   flex-direction: column;
   gap: 30px;
   width: 30vw;
+}
+
+form button {
+  width: 150px;
+  height: 50px;
+  font-size: 1.1rem;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  background-color: #008cff;
+  color: white;
+  font-weight: bold;
+  align-self: center;
+}
+
+button:hover,
+.compressed ul li:hover {
+  cursor: pointer;
 }
 
 /* Display */
